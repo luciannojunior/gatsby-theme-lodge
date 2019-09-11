@@ -1,8 +1,8 @@
 # gatsby-theme-lodge
 
-Gatsby theme for bulding beautiful and customizable landing pages for *Freemasons's Lodges.*
+Gatsby theme for bulding beautiful and customizable landing pages for **Freemasons's Lodges.** (about [Freemasonry](https://en.wikipedia.org/wiki/Freemasonry))
 
-_Built with :heart: for Brazil's Lodge "Acácia da Borborema" nº 41._
+_Built with :heart: for Brazilian Lodge "Acácia da Borborema" nº 41._
 
 It uses [gatsby-transformer-pages-json](https://github.com/luciannojunior/gatsby-transformer-pages-json) for building the site with full customization.
 
