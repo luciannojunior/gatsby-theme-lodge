@@ -18,13 +18,11 @@ In your `gatsby-config.js`:
 
 ```javascript
 module.exports = {
-  plugins: [
-    `@luciannojunior/gatsby-theme-lodge`,
-  ],
+  plugins: [`@luciannojunior/gatsby-theme-lodge`],
 }
 ```
 
-## Configuring
+## Configuration
 
 Most of this theme's customization happens in `pages.json` file, that is created automatically on your site's `data` folder (you can change this with `contentPath` option). This file must follow this pattern:
 
@@ -54,7 +52,7 @@ Most of this theme's customization happens in `pages.json` file, that is created
   ],
 }
 ```
-
+}
 ### Pages
 
 The `pages` objects declares which pages will be created in the Gatsbys site.
@@ -69,15 +67,27 @@ The `pages` objects declares which pages will be created in the Gatsbys site.
 
 ## Components
 
+### Home
+
+- Default Home component. It composes some different components of that page (Landing, Cards, Location and Gallery).
+
+Configuration:
+|Prop name|Type |Description |
+|----------------|-------------------------------|-----------------------------|
+|`landing`|`Object` |Landing component configuration (see [Landing](#landing))|
+|`cards`|`Object` |Cards component configuration (see [Cards](#cards))|
+|`location`|`Object` |Location component configuration (see [Location](#location))|
+|`gallery`|`Object` |Gallery component configuration (see [Gallery](#gallery))|
+
 ### Landing
 
 - Wraps a video background (or image background for mobile users) and displays a couple of information about the Lodge.
 
 Configuration:
 
-|Prop name|Type                          |Description                         |
-|----------------|-------------------------------|-----------------------------|
-|`landingText`|`Object`            |Describes the informations displayed in the Landing component (see [LandingText](#landing-text))|
+| Prop name     | Type     | Description                                                                                     |
+| ------------- | -------- | ----------------------------------------------------------------------------------------------- |
+| `landingText` | `Object` | Describes the informations displayed in the Landing component (see [LandingText](#landingtext)) |
 
 ### LandingText
 
@@ -85,10 +95,41 @@ Configuration:
 
 Configuration:
 
-|Prop name|Type                          |Description                    | Example |
-|----------------|-------------------------------|-----------------------------| -----|
-|`location`|`String`            | Textual address of the Lodge| `Situada na Rua Siqueira Campos, Campina Grande - PB` |
-|`lodgeName`|`String`            |Name of the Lodge|`Regeneração Campinense nº 02`|
-|`meetings`|`String`            |When do the Lodge's meetings happen?|`quartas-feiras às 19:00hrs`|
+| Prop name   | Type     | Description                          | Example                                               |
+| ----------- | -------- | ------------------------------------ | ----------------------------------------------------- |
+| `location`  | `String` | Textual address of the Lodge         | `Situada na Rua Siqueira Campos, Campina Grande - PB` |
+| `lodgeName` | `String` | Name of the Lodge                    | `Regeneração Campinense nº 02`                        |
+| `meetings`  | `String` | When do the Lodge's meetings happen? | `quartas-feiras às 19:00hrs`                          |
 
+### Cards
+
+- Displays four content cards with links to site's page (static links for now).
+
+Configuration:
+| Prop name | Type | Description |
+|----------------|-------------------------------|-----------------------------|
+|`historia`|`CardEntry` | Check **EntryType** below. |
+|`diretoria`|`CardEntry` | Check **EntryType** below. |
+|`veneraveis`|`CardEntry` | Check **EntryType** below. |
+|`filantropia`|`CardEntry` | Check **EntryType** below. |
+
+**CardEntry**
+|Prop name|Type |Description | Example |
+|----------------|-------------------------------|-----------------------------| -----|
+|`title`|`String` | Title of the card | `O que é Maçonaria?` |
+|`path`|`String` | Path that will be used to the title link |`/o-que-e-maconario`|
+|`text`|`String` | Content of the car | Free text. |
+
+### Location
+
+- Displays info about the Lodge's location and a Google Maps iframe to that adress.
+
+Configuration:
+ address, addressLink, title, gMapsUrl 
+| Prop name   | Type     | Description                          | Example                                               |
+| ----------- | -------- | ------------------------------------ | ----------------------------------------------------- |
+| `address`  | `String` | Address of the Lodge         | `Rua Siqueira Campos, 1020 - Campina Grande - PB` |
+| `addressLink` | `String` | Link that will be attached to the address displayed | `https://goo.gl/maps/QdaPBrDC7ZqodP7RA`                        |
+| `gMapsUrl`  | `String` | URL to Google Maps Iframe | Get it on [Google Maps](https://maps.google.com)|
+| `title`  | `String` | Title to the address iframe | -- |
 **WIP**
