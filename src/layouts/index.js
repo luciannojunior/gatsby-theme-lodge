@@ -3,12 +3,12 @@ import Header from '../templates/Header'
 import Footer from '../templates/Footer'
 import SEO from '../components/SEO'
 
-const Layout = ({ children, pageContext: { title } }) => {
+const Layout = ({ children, pageContext: { title, componentProps }}) => {
   return (
     <>
       <SEO title={title}/>
       <Header />
-      {children}
+      {React.cloneElement(children, componentProps)}
       <Footer />
     </>
   )

@@ -1,5 +1,4 @@
 exports.createPages = async ({ actions, graphql, reporter }) => {
-
   const result = await graphql(`
     query PagesQuery {
       allPage {
@@ -8,6 +7,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           homepage
           component
           path
+          props
         }
       }
     }
@@ -32,13 +32,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     throw new Error(`couldn't find ${name}'s implementation`)
   }
 
-  pages.forEach(({ path, component, title, props = {} }) => {
+  pages.forEach(({ path, component, title, props = '{}' }) => {
+    const componentProps = JSON.parse(props)
     actions.createPage({
       path,
       component: getComponentImplementation(component),
       context: {
         title,
-        ...props,
+        componentProps,
       },
     })
   })

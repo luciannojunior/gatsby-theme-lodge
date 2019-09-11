@@ -1,9 +1,10 @@
 import React, { useCallback, useMemo } from 'react'
+import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import LandingText from './LandingText'
 import styles from './Landing.module.css'
 
-const Header = () => {
+const Landing = ({ landingText }) => {
   const isMobile = useMemo(
     () => window.matchMedia('only screen and (max-width: 760px)').matches,
     []
@@ -28,7 +29,7 @@ const Header = () => {
         </video>
       )}
       <div className="flex flex-column justify-between h-100">
-        <LandingText />
+        <LandingText {...landingText} />
         <div className="flex flex-row items-center">
           <div
             onClick={() => {
@@ -43,4 +44,7 @@ const Header = () => {
   )
 }
 
-export default Header
+Landing.propTypes = {
+  landingText: PropTypes.any.isRequired
+}
+export default Landing

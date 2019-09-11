@@ -1,32 +1,37 @@
-import React from "react";
-import { useSpring, animated } from "react-spring";
-import styles from "./Landing.module.css";
+import React from 'react'
+import PropTypes from 'prop-types'
+import { useSpring, animated } from 'react-spring'
+import styles from './Landing.module.css'
 
 const getTo = (obj, wait) => async next => {
-  await new Promise(resolve => setTimeout(resolve, wait));
-  await next(obj);
-};
+  await new Promise(resolve => setTimeout(resolve, wait))
+  await next(obj)
+}
 
-const LandingText = () => {
+const LandingText = ({
+  location,
+  meetings,
+  lodgeName,
+}) => {
   const loja = useSpring({
     to: getTo({ opacity: 1 }, 600),
-    from: { opacity: 0 }
-  });
+    from: { opacity: 0 },
+  })
 
   const acacia = useSpring({
     to: getTo({ opacity: 1 }, 1100),
-    from: { opacity: 0 }
-  });
+    from: { opacity: 0 },
+  })
 
   const situada = useSpring({
     to: getTo({ opacity: 1 }, 1500),
-    from: { opacity: 0 }
-  });
+    from: { opacity: 0 },
+  })
 
   const reunioes = useSpring({
     to: getTo({ opacity: 1 }, 2000),
-    from: { opacity: 0 }
-  });
+    from: { opacity: 0 },
+  })
 
   return (
     <div className="flex flex-column justify-end h-100">
@@ -34,20 +39,24 @@ const LandingText = () => {
         <span className={styles.montserrat}>Loja Maçônica</span>
       </animated.div>
       <animated.div style={acacia} className={styles.acacia}>
-        <span className={styles.montserrat}>Acácia da Borborema nº 41</span>
+        <span className={styles.montserrat}>{lodgeName}</span>
       </animated.div>
       <animated.span style={situada} className={styles.situada}>
-        <span className={styles.montserrat}>
-          Situada na Rua Siqueira Campos, Campina Grande - PB
-        </span>
+        <span className={styles.montserrat}>{location}</span>
       </animated.span>
       <animated.span style={reunioes} className={styles.reunioes}>
         <span className={styles.montserrat}>
-          Reuniões nas <b>quartas-feira às 19:00hrs</b>
+          Reuniões nas <b>{meetings}</b>
         </span>
       </animated.span>
     </div>
-  );
-};
+  )
+}
 
-export default LandingText;
+LandingText.propTypes = {
+  meetings: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  lodgeName: PropTypes.string.isRequired,
+}
+
+export default LandingText
