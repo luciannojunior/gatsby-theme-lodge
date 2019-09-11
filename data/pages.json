@@ -1,0 +1,23 @@
+{
+  "menu": [
+    {
+      "page": "home",
+      "value": "Início"
+    },
+    {
+      "page": "o-que-e-maconaria",
+      "value": "O que é Maçonaria"
+    }
+  ],
+  "pages": [
+    {
+      "name": "home",
+      "homepage": true,
+      "component": "Landing"
+    },
+    {
+      "name": "o-que-e-maconaria",
+      "component": "Maconaria"
+    }
+  ]
+}
