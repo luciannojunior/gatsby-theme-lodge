@@ -125,11 +125,20 @@ Configuration:
 - Displays info about the Lodge's location and a Google Maps iframe to that adress.
 
 Configuration:
- address, addressLink, title, gMapsUrl 
 | Prop name   | Type     | Description                          | Example                                               |
 | ----------- | -------- | ------------------------------------ | ----------------------------------------------------- |
 | `address`  | `String` | Address of the Lodge         | `Rua Siqueira Campos, 1020 - Campina Grande - PB` |
 | `addressLink` | `String` | Link that will be attached to the address displayed | `https://goo.gl/maps/QdaPBrDC7ZqodP7RA`                        |
 | `gMapsUrl`  | `String` | URL to Google Maps Iframe | Get it on [Google Maps](https://maps.google.com)|
 | `title`  | `String` | Title to the address iframe | -- |
+
+### Gallery
+
+- Slideshow that loops a set of pictures (that should be provided inside `static/images` folder).
+
+Configuration:
+| Prop name   | Type     | Description                          | Example                                               |
+| ----------- | -------- | ------------------------------------ | ----------------------------------------------------- |
+| `pictures`  | `String[][]` | Array of tuples describing the name of the file and the respective alternative text | `[['1', 'Alternative text 1'], ['2', 'Alternative Text 2']]` |
+
 **WIP**
