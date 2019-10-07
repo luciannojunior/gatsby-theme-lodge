@@ -1,3 +1,6 @@
+const path = require('path')
+const fs = require('fs')
+
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const result = await graphql(`
     query PagesQuery {
@@ -23,6 +26,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     const COMPONENTS_PATH = './src/components/'
     const ENDINGS = ['.js', '.jsx', '/index.js', '/index.jsx']
     for (const ending of ENDINGS) {
+      const filePath = COMPONENTS_PATH + name + ending
+      if (fs.existsSync(filePath)) return path.resolve(filePath)
       try {
         return require.resolve(COMPONENTS_PATH + name + ending)
       } catch (e) {
