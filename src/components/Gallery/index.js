@@ -30,7 +30,7 @@ function useInterval(callback, delay) {
 
 const Gallery = ({ pictures = [] }) => {
   const isMobile = useMemo(
-    () => window.matchMedia('only screen and (max-width: 760px)').matches,
+    () => window ? window.matchMedia('only screen and (max-width: 760px)').matches : true,
     []
   )
 
