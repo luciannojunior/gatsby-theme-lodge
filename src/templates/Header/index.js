@@ -18,7 +18,7 @@ const Header = () => {
             <img
               alt={'Loja Maçônica Regeneração Campinense'}
               title="Loja Maçônica Regeneração Campinense"
-              src={'images/logo.png'}
+              src={'/images/logo.png'}
             />
           </div>
           <div className="flex flex-column justify-center">

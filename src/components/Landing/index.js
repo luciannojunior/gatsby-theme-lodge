@@ -24,7 +24,7 @@ const Landing = ({ landingText }) => {
   return (
     <div ref={landingRef} style={{height: 800}}>
       {!isMobile && (
-        <video loop autoPlay muted className={styles.bgvideo}>
+        <video loop autoPlay muted className={classnames(styles.bgvideo, 'db')}>
           <source src={'bg.mp4'} type="video/mp4" />
         </video>
       )}
