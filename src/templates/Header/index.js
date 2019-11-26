@@ -1,6 +1,5 @@
 import React from 'react'
 import Menu from '../Menu'
-import logo from './mock_logo.png'
 import gl from './mock_gl.png'
 import styles from './Header.module.css'
 import classnames from 'classnames'

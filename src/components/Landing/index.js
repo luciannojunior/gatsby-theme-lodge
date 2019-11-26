@@ -22,10 +22,10 @@ const Landing = ({ landingText }) => {
   }, [])
 
   return (
-    <div ref={landingRef}>
+    <div ref={landingRef} style={{height: 800}}>
       {!isMobile && (
-        <video loop autoPlay className={styles.bgvideo}>
-          <source src={require('./bg.mp4')} type="video/mp4" />
+        <video loop autoPlay muted className={styles.bgvideo}>
+          <source src={'bg.mp4'} type="video/mp4" />
         </video>
       )}
       <div className="flex flex-column justify-between h-100">
