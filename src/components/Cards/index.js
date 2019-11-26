@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import Card from './Card'
@@ -40,10 +40,6 @@ const Cards = ({
   veneraveis = {},
   filantropia = {},
 }) => {
-  const isMobile = useMemo(
-    () => typeof window !== 'undefined'? window.matchMedia('only screen and (max-width: 760px)').matches : true,
-    []
-  )
 
   const cardsData = {
     historia: {
@@ -66,33 +62,27 @@ const Cards = ({
 
   return (
     <>
-      <div
-        className={classnames(
-          styles.outter,
-          'flex flex-row flex-wrap justify-center-ns'
-        )}
-        id="cards"
-      >
-        {isMobile ? (
-          <>
-            <Card classes="w-100" data={cardsData.historia} />
-            <Card classes="w-100" data={cardsData.diretoria} />
-            <Card classes="w-100" data={cardsData.veneraveis} />
-            <Card classes="w-100" data={cardsData.filantropia} />
-          </>
-        ) : (
-          <>
-            <Card classes={styles.cardLarge} data={cardsData.historia} />
-            <Card classes={styles.cardLarge} data={cardsData.diretoria} />
-          </>
-        )}
-      </div>
-      {!isMobile && (
-        <div className="flex flex-row justify-center">
+      <div className="pt4" id="cards">
+        <div
+          className={classnames(
+            styles.outter,
+            'flex flex-row flex-wrap justify-center-ns db dn-ns'
+          )}
+        >
+          <Card classes="w-100" data={cardsData.historia} />
+          <Card classes="w-100" data={cardsData.diretoria} />
+          <Card classes="w-100" data={cardsData.veneraveis} />
+          <Card classes="w-100" data={cardsData.filantropia} />
+        </div>
+        <div className="flex flex-row justify-center dn db-ns">
           <Card classes={styles.cardLarge} data={cardsData.veneraveis} />
           <Card classes={styles.cardLarge} data={cardsData.filantropia} />
         </div>
-      )}
+        <div className="flex flex-row justify-center dn db-ns">
+          <Card classes={styles.cardLarge} data={cardsData.veneraveis} />
+          <Card classes={styles.cardLarge} data={cardsData.filantropia} />
+        </div>
+      </div>
     </>
   )
 }
