@@ -6,7 +6,7 @@ import styles from './Landing.module.css'
 
 const Landing = ({ landingText }) => {
   const isMobile = useMemo(
-    () => window ? window.matchMedia('only screen and (max-width: 760px)').matches : true,
+    () => typeof window !== 'undefined'? window.matchMedia('only screen and (max-width: 760px)').matches : true,
     []
   )
 
