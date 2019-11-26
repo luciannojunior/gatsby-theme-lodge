@@ -7,7 +7,6 @@ const Card = ({ classes, data: { title, path, text, image } }) => {
     <div className={classnames(classes, 'pa3-ns')}>
       <div
         className={classnames(styles.mainDiv, 'ma3 ma3-ns bg-black-10')}
-        id="cards"
       >
         <div
           className={classnames(

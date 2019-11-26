@@ -2,32 +2,6 @@ import React, { useMemo, useRef, useEffect } from 'react'
 import styles from './Gallery.module.css'
 import LazyLoad from 'react-lazy-load'
 
-function useTimeout(callback, delay) {
-  const savedCallback = useRef()
-
-  // Remember the latest callback.
-  useEffect(
-    () => {
-      savedCallback.current = callback
-    },
-    [callback]
-  )
-
-  // Set up the interval.
-  useEffect(
-    () => {
-      function tick() {
-        savedCallback.current()
-      }
-      if (delay !== null) {
-        let id = setTimeout(tick, delay)
-        return () => clearTimeout(id)
-      }
-    },
-    [delay]
-  )
-}
-
 function useInterval(callback, delay) {
   const savedCallback = useRef()
 
@@ -60,9 +34,10 @@ const Gallery = ({ pictures = [] }) => {
     []
   )
 
-  const images = pictures.map(
-    ([num, alt]) => [`images/${num}${isMobile ? '_mobile' : ''}.jpg`, alt]
-  )
+  const images = pictures.map(([num, alt]) => [
+    `images/${num}${isMobile ? '_mobile' : ''}.jpg`,
+    alt,
+  ])
 
   useInterval(() => {
     const hasImage = document.querySelector('#slideshow').children[0]
@@ -74,8 +49,9 @@ const Gallery = ({ pictures = [] }) => {
       firstDiv.nextElementSibling.children[0].classList.add(styles.show)
       firstImg.classList.add(styles.hide)
       firstImg.classList.remove(styles.show)
-      useTimeout(() => {
-        document.querySelector('#slideshow').append(firstDiv)
+      setTimeout(() => {
+        const slide = document.querySelector('#slideshow')
+        slide && slide.append(firstDiv)
       }, 2000)
     }
   }, 2000)

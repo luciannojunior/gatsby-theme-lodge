@@ -1,31 +1,38 @@
-import React from "react";
-import classnames from "classnames";
-import styles from "./Footer.module.css";
-import gl from "../Header/mock_gl.png";
+import React from 'react'
+import classnames from 'classnames'
+import styles from './Footer.module.css'
+import gl from '../Header/mock_gl.png'
 
-const Footer = () => {
+const ENDERECO = {
+  linha1: 'Rua Siqueira Campos, 1514 - 1º andar - Conceição',
+  linha2: 'Campina Grande - PB'
+}
+
+const EMAIL = 'contato@acaciadaborborema.com.br'
+
+const ano = (new Date()).getFullYear()
+
+const Footer = ({ endereco = ENDERECO, email = EMAIL }) => {
   return (
     <footer
-      className={classnames(styles.main, "flex flex-column justify-between")}
+      className={classnames(styles.main, 'flex flex-column justify-between')}
     >
       <div className="flex flex-column flex-row-ns justify-between items-center-ns">
         <div className="flex flex-column tl f6 white-80 ma3">
           <span className="ttu white-40" style={{ fontSize: 10 }}>
             Endereço
           </span>
-          <span>Rua Siqueira Campos, 1514 - 1º andar - Conceição</span>
-          <span>Campina Grande - PB</span>
+          <span>{endereco.linha1}</span>
+          <span>{endereco.linha2}</span>
           <span className="ttu white-40 mt2" style={{ fontSize: 10 }}>
             E-mail
           </span>
-          <a className="white" href="mailto:contato@acaciadaborborema.org.br">
-            contato@acaciadaborborema.org.br
-          </a>
+          <a className="white" href={email}>{email}</a>
         </div>
         <div className="flex flex-row justify-end flex-column-ns tl f6 white-80 ma3">
           <div className="flex flex-row items-center justify-center">
             <span className="w5">
-              Filiada à{" "}
+              Filiada à{' '}
               <a
                 title="Grande Loja Maçônica do Estado da Paraíba"
                 href="http://www.grandelojapb.org/"
@@ -47,14 +54,14 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-column">
+      <div className="flex flex-column pb3">
         <span className="tc f6 white-50">
-          &copy;2019 - Loja Maçônica Acácia da Borborema
+          &copy;{`${ano} - Loja Maçônica Acácia da Borborema`}
         </span>
         <span className="f6 white-30">Desenvolvido por Luciano Júnior</span>
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

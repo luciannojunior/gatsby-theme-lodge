@@ -27,7 +27,7 @@ const mockData = {
     image: require('./images/head_veneraveis.png'),
   },
   filantropia: {
-    title: 'Trabalhos Filantrópicos',
+    title: 'Filantropia',
     path: '/filantropia',
     text: LIPSUM,
     image: require('./images/head_filantropia.png'),
@@ -71,6 +71,7 @@ const Cards = ({
           styles.outter,
           'flex flex-row flex-wrap justify-center-ns'
         )}
+        id="cards"
       >
         {isMobile ? (
           <>
