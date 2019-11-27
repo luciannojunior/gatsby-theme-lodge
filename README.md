@@ -72,6 +72,7 @@ The `pages` objects declares which pages will be created in the Gatsbys site.
 - Default Home component. It composes some different components of that page (Landing, Cards, Location and Gallery).
 
 Configuration:
+
 |Prop name|Type |Description |
 |----------------|-------------------------------|-----------------------------|
 |`landing`|`Object` |Landing component configuration (see [Landing](#landing))|
@@ -106,6 +107,7 @@ Configuration:
 - Displays four content cards with links to site's page (static links for now).
 
 Configuration:
+
 | Prop name | Type | Description |
 |----------------|-------------------------------|-----------------------------|
 |`historia`|`CardEntry` | Check **EntryType** below. |
@@ -114,6 +116,7 @@ Configuration:
 |`filantropia`|`CardEntry` | Check **EntryType** below. |
 
 **CardEntry**
+
 |Prop name|Type |Description | Example |
 |----------------|-------------------------------|-----------------------------| -----|
 |`title`|`String` | Title of the card | `O que é Maçonaria?` |
@@ -125,6 +128,7 @@ Configuration:
 - Displays info about the Lodge's location and a Google Maps iframe to that adress.
 
 Configuration:
+
 | Prop name   | Type     | Description                          | Example                                               |
 | ----------- | -------- | ------------------------------------ | ----------------------------------------------------- |
 | `address`  | `String` | Address of the Lodge         | `Rua Siqueira Campos, 1020 - Campina Grande - PB` |
@@ -137,6 +141,7 @@ Configuration:
 - Slideshow that loops a set of pictures (that should be provided inside `static/images` folder).
 
 Configuration:
+
 | Prop name   | Type     | Description                          | Example                                               |
 | ----------- | -------- | ------------------------------------ | ----------------------------------------------------- |
 | `pictures`  | `String[][]` | Array of tuples describing the name of the file and the respective alternative text | `[['1', 'Alternative text 1'], ['2', 'Alternative Text 2']]` |
