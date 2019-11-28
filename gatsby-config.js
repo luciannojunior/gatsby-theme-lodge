@@ -4,8 +4,8 @@ module.exports = ({
   siteMetadata = {},
 }) => ({
   siteMetadata: {
-    title: 'Loja Maçônica "Acácia da Borborema" nº 41',
-    titleTemplate: 'Loja Maçônica "Acácia da Borborema" nº 41 | %s',
+    title: 'Início',
+    titleTemplate: '%s | Loja Maçônica "Acácia da Borborema" nº 41',
     description:
       'Loja Maçônica da cidade de Campina Grande - PB. Filiada à Grande Loja Maçônica do Estado da Paraíba',
     url: 'https://www.acaciadaborborema.org.br',

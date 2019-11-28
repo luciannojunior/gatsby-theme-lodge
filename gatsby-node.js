@@ -7,6 +7,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       allPage {
         nodes {
           name
+          title
           homepage
           component
           path
