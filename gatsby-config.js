@@ -35,7 +35,7 @@ module.exports = ({
         fonts: [
           {
             family: `Barlow`,
-            variants: [`200`],
+            variants: [`200`, `600`],
           },
           {
             family: `Montserrat`,

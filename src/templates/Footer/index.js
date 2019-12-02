@@ -5,12 +5,12 @@ import gl from '../Header/mock_gl.png'
 
 const ENDERECO = {
   linha1: 'Rua Siqueira Campos, 1514 - 1º andar - Conceição',
-  linha2: 'Campina Grande - PB'
+  linha2: 'Campina Grande - PB',
 }
 
 const EMAIL = 'contato@acaciadaborborema.com.br'
 
-const ano = (new Date()).getFullYear()
+const ano = new Date().getFullYear()
 
 const Footer = ({ endereco = ENDERECO, email = EMAIL }) => {
   return (
@@ -27,7 +27,9 @@ const Footer = ({ endereco = ENDERECO, email = EMAIL }) => {
           <span className="ttu white-40 mt2" style={{ fontSize: 10 }}>
             E-mail
           </span>
-          <a className="white" href={email}>{email}</a>
+          <a className="white" href={email}>
+            {email}
+          </a>
         </div>
         <div className="flex flex-row justify-end flex-column-ns tl f6 white-80 ma3">
           <div className="flex flex-row items-center justify-center">
@@ -44,6 +46,8 @@ const Footer = ({ endereco = ENDERECO, email = EMAIL }) => {
             <a
               title="Grande Loja Maçônica do Estado da Paraíba"
               href="http://www.grandelojapb.org/"
+              target="_blank"
+              rel="noopener"
             >
               <img
                 src={gl}
@@ -58,7 +62,14 @@ const Footer = ({ endereco = ENDERECO, email = EMAIL }) => {
         <span className="tc f6 white-50">
           &copy;{`${ano} - Loja Maçônica Acácia da Borborema`}
         </span>
-        <span className="f6 white-30">Desenvolvido por Luciano Júnior</span>
+        <a
+          target="_blank"
+          rel="noopener"
+          href="https://github.com/luciannojunior/acacia-da-borborema"
+          className="f6 white-30"
+        >
+          Desenvolvido por Luciano Júnior
+        </a>
       </div>
     </footer>
   )

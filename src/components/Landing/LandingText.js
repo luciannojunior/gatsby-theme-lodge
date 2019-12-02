@@ -1,4 +1,5 @@
 import React from 'react'
+import classnames from 'classnames'
 import PropTypes from 'prop-types'
 import { useSpring, animated } from 'react-spring'
 import styles from './Landing.module.css'
@@ -42,11 +43,11 @@ const LandingText = ({
         <span className={styles.montserrat}>{lodgeName}</span>
       </animated.div>
       <animated.span style={situada} className={styles.situada}>
-        <span className={styles.montserrat}>{location}</span>
+        <span className={classnames('white-ns', styles.montserrat)}>{location}</span>
       </animated.span>
       <animated.span style={reunioes} className={styles.reunioes}>
-        <span className={styles.montserrat}>
-          Reuniões nas <b>{meetings}</b>
+        <span className={classnames('white-ns',styles.montserrat)}>
+          Reuniões nas <b className={styles.montserrat}>{meetings}</b>
         </span>
       </animated.span>
     </div>

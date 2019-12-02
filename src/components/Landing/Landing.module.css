@@ -57,8 +57,7 @@
 }
 
 .montserrat {
-  font-family: "Montserrat", sans-serif;
-  color: white;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .loja {
@@ -71,7 +70,7 @@
 }
 .acacia span {
   color: #fcd116;
-  font-size: 6vh;
+  font-size: 5.8vh;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.7);
   line-height: 9vh;
@@ -84,6 +83,7 @@
 .situada span,
 .reunioes span {
   font-size: 20px;
+  color: white;
 }
 
 .reunioes {
@@ -92,7 +92,7 @@
 
 @media only screen and (max-width: 600px) {
   .landing {
-    background-image: url("/images/bgm.jpg");
+    background-image: url('/images/bgm.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: left top;
