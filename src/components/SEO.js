@@ -34,6 +34,9 @@ const SEO = ({ title, description, image, pathname, article }) => {
     image: `${siteUrl}${image || defaultImage}`,
     url: `${siteUrl}${pathname || '/'}`,
   }
+
+  const name = titleTemplate.split(' | ')[0]
+
   return (
     <>
       <Helmet title={seo.title} titleTemplate={titleTemplate}>
@@ -60,7 +63,6 @@ const SEO = ({ title, description, image, pathname, article }) => {
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#b1ddf1" />
         <meta name="msapplication-TileColor" content="#b1ddf1" />
         <meta name="theme-color" content="#b1ddf1" />
-        {seo.url && <meta property="og:url" content={seo.url} />}
         <meta property="og:type" content="website" />
         {seo.title && (
           <meta
@@ -68,10 +70,15 @@ const SEO = ({ title, description, image, pathname, article }) => {
             content={titleTemplate.replace('%s', seo.title)}
           />
         )}
+        {seo.url && <meta property="og:url" content={seo.url} />}
         {seo.description && (
           <meta property="og:description" content={seo.description} />
         )}
-        {seo.image && <meta property="og:image" itemprop="image" content={seo.image} />}
+        {seo.image && (
+          <meta property="og:image" itemprop="image" content={seo.image} />
+        )}
+        <meta property="og:site_name" content={name} />
+        <meta property="og:locale" content="pt_BR"/>
         <meta name="twitter:card" content="summary_large_image" />
         {seo.title && <meta name="twitter:title" content={seo.title} />}
         {seo.description && (
