@@ -41,7 +41,7 @@ const SEO = ({ title, description, image, pathname, article }) => {
     <>
       <Helmet title={seo.title} titleTemplate={titleTemplate}>
         <meta name="description" content={seo.description} />
-        <meta name="image" content={seo.image} />
+        <meta name="image" itemprop="image" content={seo.image} />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -74,12 +74,8 @@ const SEO = ({ title, description, image, pathname, article }) => {
         {seo.description && (
           <meta property="og:description" content={seo.description} />
         )}
-        {seo.image && (
-          <>
-          <meta property="og:image" itemprop="image" content={seo.image} />
-          <meta property="og:image:secure_url" content={seo.image} />
-          </>
-        )}
+        <meta property="og:image" content={seo.image} />
+        <meta property="og:image:secure_url" content={seo.image} />
         <meta property="og:site_name" content={name} />
         <meta property="og:locale" content="pt_BR" />
         <meta name="twitter:card" content="summary_large_image" />
