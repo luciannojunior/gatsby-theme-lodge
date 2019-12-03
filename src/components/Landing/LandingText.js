@@ -9,11 +9,7 @@ const getTo = (obj, wait) => async next => {
   await next(obj)
 }
 
-const LandingText = ({
-  location,
-  meetings,
-  lodgeName,
-}) => {
+const LandingText = ({ location, locationSub, meetings, lodgeName }) => {
   const loja = useSpring({
     to: getTo({ opacity: 1 }, 600),
     from: { opacity: 0 },
@@ -43,10 +39,16 @@ const LandingText = ({
         <span className={styles.montserrat}>{lodgeName}</span>
       </animated.div>
       <animated.span style={situada} className={styles.situada}>
-        <span className={classnames('white-ns', styles.montserrat)}>{location}</span>
+        <span className={classnames('white-ns', styles.montserrat)}>
+          {location}
+        </span>
+        <br />
+        <p className={styles.locationsub}>
+          {locationSub}
+        </p>
       </animated.span>
       <animated.span style={reunioes} className={styles.reunioes}>
-        <span className={classnames('white-ns',styles.montserrat)}>
+        <span className={classnames('white-ns', styles.montserrat)}>
           Reuniões nas <b className={styles.montserrat}>{meetings}</b>
         </span>
       </animated.span>

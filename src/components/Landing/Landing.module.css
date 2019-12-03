@@ -56,8 +56,20 @@
   }
 }
 
+.situada span,
+.reunioes span {
+  font-size: 20px;
+  color: white;
+}
+
 .montserrat {
   font-family: 'Montserrat', sans-serif;
+}
+
+.locationsub {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.875rem;
+  color: white;
 }
 
 .loja {
@@ -78,12 +90,6 @@
 }
 .situada {
   margin-bottom: 50px;
-}
-
-.situada span,
-.reunioes span {
-  font-size: 20px;
-  color: white;
 }
 
 .reunioes {
@@ -117,7 +123,8 @@
   }
 
   .situada span,
-  .reunioes span {
+  .reunioes span,
+  .locationsub{
     color: #332c23;
   }
 }

@@ -62,14 +62,17 @@ const Footer = ({ endereco = ENDERECO, email = EMAIL }) => {
         <span className="tc f6 white-50">
           &copy;{`${ano} - Loja Maçônica Acácia da Borborema`}
         </span>
-        <a
-          target="_blank"
-          rel="noopener"
-          href="https://github.com/luciannojunior/acacia-da-borborema"
-          className="f6 white-30"
-        >
-          Desenvolvido por Luciano Júnior
-        </a>
+        <span className="f6 white-30">
+          Desenvolvido por{' '}
+          <a
+            target="_blank"
+            rel="noopener"
+            href="https://github.com/luciannojunior/acacia-da-borborema"
+            className="f6 white-30"
+          >
+            Luciano Júnior
+          </a>
+        </span>
       </div>
     </footer>
   )

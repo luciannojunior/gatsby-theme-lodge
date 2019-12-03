@@ -14,8 +14,15 @@
   font-family: Montserrat;
   font-weight: 100;
   display: block;
-  padding-bottom: 35px;
   text-decoration: underline;
+}
+
+.addresssub {
+  color: white;
+  font-family: Montserrat;
+  padding-bottom: 35px;
+  display: block;
+  font-size: 0.875rem;
 }
 
 .address:hover {
