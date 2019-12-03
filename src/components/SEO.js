@@ -63,7 +63,7 @@ const SEO = ({ title, description, image, pathname, article }) => {
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#b1ddf1" />
         <meta name="msapplication-TileColor" content="#b1ddf1" />
         <meta name="theme-color" content="#b1ddf1" />
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
         {seo.title && (
           <meta
             property="og:title"
@@ -75,12 +75,15 @@ const SEO = ({ title, description, image, pathname, article }) => {
           <meta property="og:description" content={seo.description} />
         )}
         {seo.image && (
+          <>
           <meta property="og:image" itemprop="image" content={seo.image} />
+          <meta property="og:image:secure_url" content={seo.image} />
+          </>
         )}
         <meta property="og:site_name" content={name} />
-        <meta property="og:locale" content="pt_BR"/>
+        <meta property="og:locale" content="pt_BR" />
         <meta name="twitter:card" content="summary_large_image" />
-        {seo.title && <meta name="twitter:title" content={seo.title} />}
+        {seo.title && <meta name="twitter:title" content={name} />}
         {seo.description && (
           <meta name="twitter:description" content={seo.description} />
         )}
