@@ -65,7 +65,7 @@ const SEO = ({ title, description, image, pathname, article }) => {
         {seo.title && (
           <meta
             property="og:title"
-            content={seo.titleTemplate.replace('%s', seo.title)}
+            content={titleTemplate.replace('%s', seo.title)}
           />
         )}
         {seo.description && (
