@@ -61,14 +61,17 @@ const SEO = ({ title, description, image, pathname, article }) => {
         <meta name="msapplication-TileColor" content="#b1ddf1" />
         <meta name="theme-color" content="#b1ddf1" />
         {seo.url && <meta property="og:url" content={seo.url} />}
-        {(article ? true : null) && (
-          <meta property="og:type" content="article" />
+        <meta property="og:type" content="website" />
+        {seo.title && (
+          <meta
+            property="og:title"
+            content={seo.titleTemplate.replace('%s', seo.title)}
+          />
         )}
-        {seo.title && <meta property="og:title" content={seo.title} />}
         {seo.description && (
           <meta property="og:description" content={seo.description} />
         )}
-        {seo.image && <meta property="og:image" content={seo.image} />}
+        {seo.image && <meta property="og:image" itemprop="image" content={seo.image} />}
         <meta name="twitter:card" content="summary_large_image" />
         {seo.title && <meta name="twitter:title" content={seo.title} />}
         {seo.description && (
