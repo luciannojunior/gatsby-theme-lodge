@@ -84,6 +84,12 @@ const SEO = ({ title, description, image, pathname, article }) => {
           <meta name="twitter:description" content={seo.description} />
         )}
         {seo.image && <meta name="twitter:image" content={seo.image} />}
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/tachyons/4.11.1/tachyons.min.css"
+          integrity="sha256-XiJ+PedljEmPP2VaQzSzekfCZdPr0fpqmh9dY6kpsuQ="
+          crossorigin="anonymous"
+        />
       </Helmet>
     </>
   )
