@@ -2,6 +2,7 @@ module.exports = ({
   basePath = '/',
   contentPath = 'data',
   siteMetadata = {},
+  prismic = {},
 }) => ({
   siteMetadata: {
     title: 'Início',
@@ -44,5 +45,14 @@ module.exports = ({
         ],
       },
     },
+    {
+      resolve: `gatsby-source-prismic`,
+      options: {
+        repositoryName: prismic.repo,
+        accessToken: prismic.key,
+        linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
+      },
+    },
+    `gatsby-plugin-sitemap`,
   ],
 })
