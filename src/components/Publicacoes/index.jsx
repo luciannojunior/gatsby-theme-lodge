@@ -25,7 +25,7 @@ const renderNoticia = ({ title, uid, date, leitura }) => {
       )}
     >
       <div className="flex flex-column justify-between w-80">
-        <span className="f3 b pt1 tl">{title}</span>
+        <span className="f3-ns f4 b pt1 pr1 tl">{title}</span>
         <span className="f6 gray ttu tl">{leitura}</span>
       </div>
       <div className={classnames('flex flex-column b f2 tc')}>
@@ -48,8 +48,8 @@ const Publicacoes = ({ noticias = MOCK }) => {
           Publicações
         </h2>
         {noticias.map(renderNoticia)}
-        <div className="flex justify-center dn">
-          <span className="tc ttu b mt2 mb3 f4 dim pointer bg-white-50 pa2">
+        <div className="flex justify-center">
+          <span className="dn tc ttu b mt2 mb3 f4 dim pointer bg-white-50 pa2">
             + Mais
           </span>
         </div>
