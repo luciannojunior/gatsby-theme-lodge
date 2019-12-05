@@ -11,7 +11,7 @@ const Home = ({ landing, cards = {}, location = {}, gallery = {} }) => (
     <Cards {...cards} />
     <Location {...location} />
     <Gallery {...gallery} />
-    <PublicacoesContainer />
+    <PublicacoesContainer isHome />
   </>
 )
 

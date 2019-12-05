@@ -5,16 +5,17 @@ import Publicacoes from '../components/Publicacoes'
 const getReadingTime = (text = ``) => {
   const AVERAGE = 240
   const words = text.split(` `).length
-  const minutes = Math.max(Math.ceil(words / AVERAGE),2)
+  const minutes = Math.max(Math.ceil(words / AVERAGE), 2)
   return `${minutes} minutos de leitura`
 }
 
-const PublicacoesContainer = () => {
+const PublicacoesContainer = ({ isHome = false }) => {
+  // TODO: We will probably need another container
   const data = useStaticQuery(graphql`
     query NoticiasQuery {
       allPrismicNoticia(
         sort: { fields: first_publication_date, order: DESC }
-        limit: 5
+        limit: 100
       ) {
         nodes {
           uid
@@ -34,7 +35,7 @@ const PublicacoesContainer = () => {
 
   const entries = data.allPrismicNoticia.nodes
 
-  const noticias = entries.map(
+  const noticias = (isHome ? entries.slice(0, 5) : entries).map(
     ({
       uid,
       data: {
@@ -52,7 +53,7 @@ const PublicacoesContainer = () => {
     }
   )
 
-  return <Publicacoes noticias={noticias} />
+  return <Publicacoes noticias={noticias} isHome={isHome} />
 }
 
 export default PublicacoesContainer

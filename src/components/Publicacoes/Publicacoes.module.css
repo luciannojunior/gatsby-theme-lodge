@@ -1,7 +1,20 @@
+.c {
+  max-width: 800px
+}
+
+@media only screen and (min-width: 900px) {
+  .c {
+    width: 800px;
+  }
+}
 .container {
   background-color: #b1ddf1;
   width: 100%;
   min-height: 500px;
+}
+
+.container-page {
+  min-height: 600px;
 }
 
 .heading {
@@ -14,11 +27,17 @@
 
 .noticia {
   background-color: rgba(255, 255, 255, 0.3); 
+}
+
+.a {
   text-decoration: inherit;
   color: inherit;
   cursor: auto;
 }
 
+.noticia-page {
+  background-color: #b1ddf155; 
+}
 .noticia *,
 .inner * {
   font-family: Barlow;

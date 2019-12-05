@@ -27,7 +27,7 @@ const Footer = ({ endereco = ENDERECO, email = EMAIL }) => {
           <span className="ttu white-40 mt2" style={{ fontSize: 10 }}>
             E-mail
           </span>
-          <a className="white" href={email}>
+          <a className="white" href={`mailto:${email}`}>
             {email}
           </a>
         </div>
@@ -36,6 +36,8 @@ const Footer = ({ endereco = ENDERECO, email = EMAIL }) => {
             <span className="w5">
               Filiada à{' '}
               <a
+                target="_blank"
+                rel="noopener"
                 title="Grande Loja Maçônica do Estado da Paraíba"
                 href="http://www.grandelojapb.org/"
                 className="white"

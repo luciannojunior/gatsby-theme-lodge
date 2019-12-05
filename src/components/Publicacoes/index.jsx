@@ -12,7 +12,7 @@ const MOCK = [
   },
 ]
 
-const renderNoticia = ({ title, uid, date, leitura }) => {
+const renderNoticia = isHome => ({ title, uid, date, leitura }) => {
   const [dia, mes, ano] = date.split('/')
   const data = [dia, mes].join('/')
   return (
@@ -20,8 +20,10 @@ const renderNoticia = ({ title, uid, date, leitura }) => {
       to={`/${uid}`}
       key={uid}
       className={classnames(
-        'pa2 pb3 ma2 dim pointer flex justify-between b',
-        styles.noticia
+        'pa2 pb3 dim pointer flex justify-between b',
+        { ma2: isHome, mv2: !isHome },
+        isHome ? styles.noticia : styles.noticiaPage,
+        styles.a
       )}
     >
       <div className="flex flex-column justify-between w-80">
@@ -35,24 +37,38 @@ const renderNoticia = ({ title, uid, date, leitura }) => {
     </Link>
   )
 }
-const Publicacoes = ({ noticias = MOCK }) => {
+const Publicacoes = ({ noticias = MOCK, isHome }) => {
   return (
     <div
       className={classnames(
-        'ph2 pb2 flex flex-column items-center',
-        styles.container
+        'pb2 flex flex-column items-center',
+        isHome ? styles.container : styles.containerPage,
+        { ph2: isHome },
+        { [styles.c]: !isHome }
       )}
     >
-      <div className={classnames(styles.inner)}>
-        <h2 className={classnames(styles.heading, 'f2 tc mv3 w-100')}>
-          Publicações
-        </h2>
-        {noticias.map(renderNoticia)}
-        <div className="flex justify-center">
-          <span className="dn tc ttu b mt2 mb3 f4 dim pointer bg-white-50 pa2">
-            + Mais
-          </span>
-        </div>
+      <div className={classnames(`w-auto`)}>
+        {isHome ? (
+          <h2 className={classnames(styles.heading, 'f2 tc mv4 w-100')}>
+            Publicações
+          </h2>
+        ) : (
+          <h1 className="f3 f2-ns tl">Publicações</h1>
+        )}
+        {noticias.map(renderNoticia(isHome))}
+        {isHome && (
+          <div className="flex justify-center">
+            <Link
+              to="/publicacoes"
+              className={classnames(
+                styles.a,
+                'tc ttu b mt2 mb3 f4 dim pointer bg-white-50 pa2'
+              )}
+            >
+              + Mais
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   )
