@@ -7,7 +7,9 @@ const Post = ({ data: { prismicNoticia } }) => {
   const { data } = prismicNoticia
   return (
     <div className="flex justify-center">
-      <div className={classnames(styles.content, 'mh0-ns mh4 tl')}>
+      <div
+        className={classnames(styles.content, 'mh3 tl w-90 w-auto-ns')}
+      >
         <h1 className="mb0 pb0">{data.title.text}</h1>
         <span className="i f6 grey">{`Postado em ${data.date}`}</span>
         <div dangerouslySetInnerHTML={{ __html: data.conteudo.html }} />

@@ -1,7 +1,7 @@
 const path = require('path')
 const fs = require('fs')
 
-exports.createPages = async ({ actions, graphql, reporter }) => {
+const createStaticPages = async (actions, graphql, reporter) => {
   const result = await graphql(`
     query PagesQuery {
       allPage {
@@ -49,4 +49,42 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     })
   })
+}
+const createNoticiasPages = async (actions, graphql, reporter) => {
+  const result = await graphql(`
+    query NoticiasQuery {
+      allPrismicNoticia(sort: { fields: first_publication_date, order: DESC }) {
+        nodes {
+          uid
+          data {
+            title {
+              text
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  if (result.errors) {
+    reporter.panic('No can do!')
+  }
+
+  const { nodes: pages } = result.data.allPrismicNoticia
+  const template = require.resolve('./src/templates/Noticia.jsx')
+  pages.forEach(({uid, data: { title: { text: title } }}) =>{
+    actions.createPage({
+      path: `/${uid}`,
+      component: template,
+      context: {
+        uid,
+        title,
+      },
+    })
+  })
+}
+
+exports.createPages = async ({ actions, graphql, reporter }) => {
+  await createStaticPages(actions, graphql, reporter)
+  await createNoticiasPages(actions, graphql, reporter) 
 }

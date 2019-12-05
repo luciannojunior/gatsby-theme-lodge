@@ -10,6 +10,7 @@ module.exports = ({
     description:
       'Loja Maçônica da cidade de Campina Grande - PB. Filiada à Grande Loja Maçônica do Estado da Paraíba',
     url: 'https://www.acaciadaborborema.org.br',
+    siteUrl: 'https://www.acaciadaborborema.com.br',
     image: '/images/snape.jpg',
     ...siteMetadata,
   },
