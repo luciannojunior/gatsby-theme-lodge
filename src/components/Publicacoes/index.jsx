@@ -39,7 +39,7 @@ const Publicacoes = ({ noticias = MOCK }) => {
   return (
     <div
       className={classnames(
-        'ph2 flex flex-column items-center',
+        'ph2 pb2 flex flex-column items-center',
         styles.container
       )}
     >
@@ -48,7 +48,7 @@ const Publicacoes = ({ noticias = MOCK }) => {
           Publicações
         </h2>
         {noticias.map(renderNoticia)}
-        <div className="flex justify-center">
+        <div className="flex justify-center dn">
           <span className="tc ttu b mt2 mb3 f4 dim pointer bg-white-50 pa2">
             + Mais
           </span>

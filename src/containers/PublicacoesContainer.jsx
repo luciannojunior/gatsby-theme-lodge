@@ -5,7 +5,7 @@ import Publicacoes from '../components/Publicacoes'
 const getReadingTime = (text = ``) => {
   const AVERAGE = 240
   const words = text.split(` `).length
-  const minutes = Math.ceil(words / AVERAGE)
+  const minutes = Math.max(Math.ceil(words / AVERAGE),2)
   return `${minutes} minutos de leitura`
 }
 
