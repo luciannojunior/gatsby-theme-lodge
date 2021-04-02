@@ -32,21 +32,6 @@ module.exports = ({
     'gatsby-transformer-json',
     '@lucis/gatsby-transformer-pages-json',
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Barlow`,
-            variants: [`200`, `600`],
-          },
-          {
-            family: `Montserrat`,
-            variants: [`300`],
-          },
-        ],
-      },
-    },
-    {
       resolve: `gatsby-source-prismic`,
       options: {
         repositoryName: prismic.repo,
