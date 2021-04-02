@@ -69,7 +69,7 @@ const Footer = ({ endereco = ENDERECO, email = EMAIL }) => {
           <a
             target="_blank"
             rel="noopener"
-            href="https://github.com/luciannojunior/acacia-da-borborema"
+            href="https://github.com/lucis/acacia-da-borborema"
             className="f6 white-30"
           >
             Luciano Júnior

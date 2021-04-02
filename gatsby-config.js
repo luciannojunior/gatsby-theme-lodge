@@ -30,7 +30,7 @@ module.exports = ({
       },
     },
     'gatsby-transformer-json',
-    '@luciannojunior/gatsby-transformer-pages-json',
+    '@lucis/gatsby-transformer-pages-json',
     {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
