@@ -8,8 +8,7 @@
   "scripts": {
     "build": "gatsby build",
     "clean": "gatsby clean",
-    "develop": "gatsby develop",
-    "publish": "release-it"
+    "develop": "gatsby develop"
   },
   "repository": "https://github.com/luciannojunior/gatsby-theme-lodge",
   "peerDependencies": {
