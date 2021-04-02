@@ -1579,10 +1579,10 @@
     iterall "^1.1.3"
     uuid "^3.1.0"
 
-"@luciannojunior/gatsby-transformer-pages-json@^0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@luciannojunior/gatsby-transformer-pages-json/-/gatsby-transformer-pages-json-0.2.0.tgz#5f6cd7dd74e7cf1f4aae247e26b945889f07ef69"
-  integrity sha512-WItiROrkVs3bxeyJV8ELDGlWyit/0TgcGDBkYHgGpqwljx/BW5ztpOZJVTNRVoDyEyp17fLidbso4L8FGA4gEQ==
+"@lucis/gatsby-transformer-pages-json@^0.2.0":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@lucis/gatsby-transformer-pages-json/-/gatsby-transformer-pages-json-0.2.1.tgz#0f571c109533818a5d1c04b291cff2e73987f6bf"
+  integrity sha512-E9iXF+2JGqEzgRQRjdL/UjGesNIgea8wtPJ9zTFaXdz30ViE2VIl/pcwcEaCJP5YBSYBXrM3JIA+PEmCMuIAgw==
 
 "@mikaelkristiansson/domready@^1.0.9":
   version "1.0.9"
