@@ -32,7 +32,7 @@ module.exports = ({
     'gatsby-transformer-json',
     '@lucis/gatsby-transformer-pages-json',
     {
-      resolve: `gatsby-source-prismic`,
+      resolve: `gatsby-source-prismic-graphql`,
       options: {
         repositoryName: prismic.repo,
         accessToken: prismic.key,

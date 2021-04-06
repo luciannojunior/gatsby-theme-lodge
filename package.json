@@ -21,6 +21,9 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
   },
+  "resolutions": {
+    "gatsby-source-graphql-universal": "3.3.0"
+  },
   "dependencies": {
     "@lucis/gatsby-transformer-pages-json": "^0.2.0",
     "classnames": "^2.2.6",
@@ -29,6 +32,7 @@
     "gatsby-plugin-sitemap": "^2.2.22",
     "gatsby-source-filesystem": "^2.1.21",
     "gatsby-source-prismic": "^2.3.0-alpha.3",
+    "gatsby-source-prismic-graphql": "^3.6.2",
     "gatsby-transformer-json": "^2.2.7",
     "react-helmet": "^5.2.1",
     "react-lazy-load": "^3.0.13",
