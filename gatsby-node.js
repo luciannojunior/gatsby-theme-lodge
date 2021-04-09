@@ -86,5 +86,5 @@ const createNoticiasPages = async (actions, graphql, reporter) => {
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   await createStaticPages(actions, graphql, reporter)
-  await createNoticiasPages(actions, graphql, reporter) 
+  // await createNoticiasPages(actions, graphql, reporter) 
 }
