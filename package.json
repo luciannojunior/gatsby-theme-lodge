@@ -25,6 +25,7 @@
     "gatsby-source-graphql-universal": "3.3.0"
   },
   "dependencies": {
+    "gatsby-source-graphql-universal": "3.3.0",
     "@lucis/gatsby-transformer-pages-json": "^0.2.0",
     "classnames": "^2.2.6",
     "gatsby-plugin-layout": "^1.1.6",
