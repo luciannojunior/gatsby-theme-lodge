@@ -2,7 +2,7 @@
   "name": "@lucis/gatsby-theme-lodge",
   "description": "Gatsby theme for bulding beautiful and customizable landing pages for Freemasons's Lodges.",
   "author": "Luciano Júnior <luciannojunior@gmail.com",
-  "version": "1.1.34",
+  "version": "1.1.35",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
